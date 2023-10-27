@@ -1,0 +1,52 @@
+# Example:
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-demo-service
+  namespace: backstage-demo
+  description: Backstage demo service
+spec:
+  type: service
+  lifecycle: production
+  owner: group:guests
+  providesApis:
+    - backstage-demo-user-api-v1
+    - backstage-demo-user-api-v2    
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: backstage-demo-user-api-v1
+  namespace: backstage-demo
+  description: Users API v1
+  tags:
+    - users
+    - rest
+  annotations:
+    # The annotation is deprecated, we use placeholders (see below) instead, remove it later.
+    #backstage.io/definition-at-location: 'url:https://raw.githubusercontent.com/APIs-guru/openapi-directory/master/APIs/spotify.com/v1/swagger.yaml'
+spec:
+  type: openapi
+  lifecycle: production
+  owner: guests
+  definition:
+    $text: ./api/v1/openapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: backstage-demo-user-api-v2
+  namespace: backstage-demo
+  description: Users API v2
+  tags:
+    - users
+    - rest
+  annotations:
+    # The annotation is deprecated, we use placeholders (see below) instead, remove it later.
+    #backstage.io/definition-at-location: 'url:https://raw.githubusercontent.com/APIs-guru/openapi-directory/master/APIs/spotify.com/v1/swagger.yaml'
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: guests
+  definition:
+    $text: ./api/v2/openapi.yaml
