@@ -1,0 +1,8 @@
+site_name: backstage-demo-service
+site_description: Demo service for serving capabilities of Backstage developer portal
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core
