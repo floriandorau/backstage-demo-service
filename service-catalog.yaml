@@ -15,6 +15,8 @@ spec:
   providesApis:
     - backstage-demo-user-api-v1
     - backstage-demo-user-api-v2    
+  consumesApis:
+    - backstage-demo-user-async-api-v1
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -27,7 +29,7 @@ metadata:
     - rest
 spec:
   type: openapi
-  lifecycle: production
+  lifecycle: deprecated
   owner: guests
   definition:
     $text: ./api/v1/openapi.yaml
@@ -44,6 +46,7 @@ metadata:
 spec:
   type: asyncapi
   lifecycle: production
+  system: system:backstage-demo-service
   owner: guests
   definition:
     $text: ./api/v1/asyncapi.yaml
