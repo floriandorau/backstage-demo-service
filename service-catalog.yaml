@@ -35,6 +35,22 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
+  name: backstage-demo-user-async-api-v1
+  namespace: backstage-demo
+  description: Users Async API v1
+  tags:
+    - users
+    - rest
+spec:
+  type: asyncapi
+  lifecycle: production
+  owner: guests
+  definition:
+    $text: ./api/v1/asyncapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
   name: backstage-demo-user-api-v2
   namespace: backstage-demo
   description: Users API v2
