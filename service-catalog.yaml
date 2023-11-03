@@ -7,7 +7,7 @@ metadata:
   description: Backstage demo service
   annotations:
     backstage.io/techdocs-ref: dir:.
-    backstage.io/kubernetes-namespace: backstage-demo
+    backstage.io/kubernetes-label-selector: app=backstage-demo-service
     github.com/project-slug: floriandorau/backstage-demo-service 
 spec:
   type: service
