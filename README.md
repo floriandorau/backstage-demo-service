@@ -1,6 +1,6 @@
 # backstage-demo-service
 
-Simple Kotlin Spring Boot demo service used to illustrate Backstage capabilites.
+Simple Kotlin Spring Boot demo service used to illustrate [Backstage](https://backstage.io/) capabilites.
 
 ## Deployment
 
