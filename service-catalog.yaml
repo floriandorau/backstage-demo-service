@@ -13,6 +13,11 @@ spec:
   type: service
   lifecycle: production
   owner: group:guests
+  tags:
+    - backstage-demo
+  links:
+    - title: Gitub Repo
+      url: https://github.com/floriandorau/backstage-demo-service
   providesApis:
     - backstage-demo-user-api-v1
     - backstage-demo-user-api-v2    
