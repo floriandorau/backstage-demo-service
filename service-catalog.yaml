@@ -8,16 +8,17 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-label-selector: app=backstage-demo-service
-    github.com/project-slug: floriandorau/backstage-demo-service 
-spec:
-  type: service
-  lifecycle: production
-  owner: group:guests
+    github.com/project-slug: floriandorau/backstage-demo-service
+    argocd/app-name: backstage-demo-service
   tags:
     - backstage-demo
   links:
     - title: Gitub Repo
       url: https://github.com/floriandorau/backstage-demo-service
+spec:
+  type: service
+  lifecycle: production
+  owner: group:guests
   providesApis:
     - backstage-demo-user-api-v1
     - backstage-demo-user-api-v2    
